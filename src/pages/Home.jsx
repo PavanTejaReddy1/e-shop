@@ -14,18 +14,22 @@ function Home() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        setLoading(true);
-
-        try {
-            setTimeout(() => {
+        const fetchData = async () => {
+            try {
+                setLoading(true);
+                
+                // Simulating async API call (mock data) to demonstrate loading state handling
+                await new Promise((resolve) => setTimeout(resolve, 500));
+                
                 setData(products);
+            } catch (err) {
+                setError("Something went wrong");
+            } finally {
                 setLoading(false);
-            }, 500);
-        } catch (err) {
-            setError("Something went wrong");
-            setLoading(false);
-        }
-
+            }
+        };
+        
+        fetchData();
     }, []);
     
     const columns = [
