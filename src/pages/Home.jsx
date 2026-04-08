@@ -79,13 +79,13 @@ function Home() {
     }
 
     return (
-        <div className="p-6 bg-gray-100 min-h-screen">
+        <div className="p-6 bg-gray-100 min-h-screen overflow-x-auto">
 
             <h1 className="text-3xl font-bold mb-6 text-gray-800">
                 Product List
             </h1>
 
-            <div className="bg-white p-6 rounded-xl shadow-lg">
+            <div className="bg-white p-6 rounded-xl shadow-lg min-w-[600px]">
 
                 <div className="flex justify-center items-center gap-4 mb-6">
                     <input type="text" placeholder="Search product..."  value={search} onChange={(e) => setSearch(e.target.value)} className="border border-gray-300 px-4 py-2 rounded-lg w-64 focus:outline-none focus:ring-2 focus:ring-blue-400" />
